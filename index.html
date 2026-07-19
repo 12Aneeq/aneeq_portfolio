@@ -3,32 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Syed Khadir Aneeq | Python Developer & AI/ML Engineer</title>
+<title>Syed Khadir Aneeq | GCP Technical Solutions Engineer & AI/ML</title>
 <style>
   :root {
-    --cyan: #00f5ff;
-    --purple: #a855f7;
-    --pink: #ec4899;
-    --dark: #050510;
+    --cyan: #4285F4;
+    --purple: #EA4335;
+    --pink: #FBBC04;
+    --green: #34A853;
+    --dark: #060912;
     --card: rgba(255,255,255,0.04);
     --border: rgba(255,255,255,0.08);
     --text: #e2e8f0;
     --muted: #94a3b8;
+    --bg: #060912;
+    --nav-bg: rgba(6,9,18,0.88);
+    --mob-bg: rgba(6,9,18,0.97);
+    --section-alt: rgba(255,255,255,0.012);
+    --skill-track: rgba(255,255,255,0.06);
+    --strong-text: #e2e8f0;
   }
+
+  /* ── LIGHT MODE ── */
+  body.light {
+    --bg: #ffffff;
+    --dark: #ffffff;
+    --card: rgba(0,0,0,0.03);
+    --border: rgba(0,0,0,0.09);
+    --text: #2b2d42;
+    --muted: #5c6480;
+    --nav-bg: rgba(255,255,255,0.9);
+    --mob-bg: rgba(255,255,255,0.98);
+    --section-alt: rgba(66,133,244,0.03);
+    --skill-track: rgba(0,0,0,0.07);
+    --strong-text: #1a1a2e;
+  }
+  body.light { background: var(--bg); color: var(--text); }
+  body.light nav { background: var(--nav-bg); border-bottom: 1px solid rgba(0,0,0,0.08); }
+  body.light .mobile-menu { background: var(--mob-bg); }
+  body.light #loader { background: #ffffff; }
+  body.light .loader-text {
+    background: linear-gradient(90deg, #2b2d42, var(--cyan), var(--purple), var(--pink), var(--green), #2b2d42);
+    background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    animation: shimmer 2s linear infinite;
+  }
+  body.light .loader-sub { color: #5c6480; }
+  body.light .loader-bar-bg { background: rgba(0,0,0,0.08); }
+  body.light .hamburger span { background: var(--text); }
+  body.light .section-pad { }
+  body.light #experience.section-pad,
+  body.light section[style*="rgba(255,255,255,0.012)"] { background: rgba(66,133,244,0.03) !important; }
+  body.light .stat-card { background: rgba(66,133,244,0.04); border-color: rgba(66,133,244,0.15); }
+  body.light .exp-card { background: rgba(66,133,244,0.03); border-color: rgba(66,133,244,0.15); }
+  body.light .exp-card:hover { background: rgba(66,133,244,0.07); }
+  body.light .project-card { background: #fff; border-color: rgba(0,0,0,0.1); box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+  body.light .project-card:hover { box-shadow: 0 12px 40px rgba(66,133,244,0.18); }
+  body.light .cert-card { background: rgba(66,133,244,0.03); border-color: rgba(0,0,0,0.09); }
+  body.light .cert-card:hover { border-color: rgba(234,67,53,0.3); background: rgba(66,133,244,0.06); }
+  body.light .contact-link { border-color: rgba(0,0,0,0.12); color: var(--text); background: rgba(66,133,244,0.03); }
+  body.light .contact-link:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(66,133,244,0.07); }
+  body.light .marquee-section { background: rgba(66,133,244,0.03); border-color: rgba(0,0,0,0.07); }
+  body.light .btn-ghost { border-color: rgba(0,0,0,0.15); color: var(--text); }
+  body.light .btn-ghost:hover { border-color: var(--cyan); background: rgba(66,133,244,0.06); color: var(--cyan); }
+  body.light footer { border-top-color: rgba(0,0,0,0.08); }
+  body.light .c-ripple { border-color: rgba(66,133,244,0.12); }
+
+  /* TOGGLE SWITCH */
+  .theme-toggle {
+    display: flex; align-items: center; gap: 0.5rem;
+    cursor: none; user-select: none;
+  }
+  .toggle-track {
+    width: 44px; height: 24px; border-radius: 100px;
+    background: rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    position: relative; transition: background 0.35s, border-color 0.35s;
+    flex-shrink: 0;
+  }
+  body.light .toggle-track {
+    background: rgba(66,133,244,0.15);
+    border-color: rgba(66,133,244,0.3);
+  }
+  .toggle-thumb {
+    position: absolute; top: 3px; left: 3px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--cyan);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), background 0.35s;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; line-height: 1;
+  }
+  body.light .toggle-thumb { transform: translateX(20px); background: var(--cyan); }
+  .toggle-icon { font-size: 0.82rem; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Segoe UI', system-ui, sans-serif;
-    background: var(--dark);
+    background: var(--bg);
     color: var(--text);
     overflow-x: hidden;
     cursor: none;
+    transition: background 0.4s ease, color 0.4s ease;
   }
 
   /* LOADER */
   #loader {
     position: fixed; inset: 0;
-    background: var(--dark);
+    background: var(--bg);
     display: flex; align-items: center; justify-content: center;
     z-index: 9999; flex-direction: column; gap: 2rem;
     transition: opacity 0.8s ease, visibility 0.8s ease;
@@ -37,7 +116,7 @@
   .loader-text {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 900;
-    background: linear-gradient(90deg, #fff, var(--cyan), var(--purple), var(--pink), #fff);
+    background: linear-gradient(90deg, #fff, var(--cyan), var(--purple), var(--pink), var(--cyan), #fff);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text; background-size: 300%;
     animation: shimmer 2s linear infinite;
@@ -48,7 +127,7 @@
   }
   .loader-bar-fill {
     height: 100%; border-radius: 100px;
-    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    background: #4285F4;
     animation: loadfill 1.8s ease forwards;
   }
   @keyframes loadfill { from { width: 0; } to { width: 100%; } }
@@ -59,12 +138,12 @@
     width: 10px; height: 10px; background: var(--cyan); border-radius: 50%;
     position: fixed; pointer-events: none; z-index: 9998;
     transform: translate(-50%,-50%);
-    box-shadow: 0 0 10px var(--cyan), 0 0 20px rgba(0,245,255,0.4);
+    box-shadow: 0 0 10px var(--cyan), 0 0 20px rgba(66,133,244,0.4);
     transition: transform 0.1s, background 0.2s;
   }
   #cursor-ring {
     width: 36px; height: 36px;
-    border: 1.5px solid rgba(0,245,255,0.45);
+    border: 1.5px solid rgba(66,133,244,0.45);
     border-radius: 50%;
     position: fixed; pointer-events: none; z-index: 9997;
     transform: translate(-50%,-50%);
@@ -77,10 +156,11 @@
   /* NAV */
   nav {
     position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(5,5,16,0.88); backdrop-filter: blur(14px);
+    background: var(--nav-bg); backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
     padding: 1rem 2rem;
     display: flex; align-items: center; justify-content: space-between;
+    transition: background 0.4s;
   }
   .nav-logo {
     font-weight: 900; font-size: 1.15rem;
@@ -100,8 +180,9 @@
   .hamburger span { width: 22px; height: 1.5px; background: var(--text); display: block; }
   .mobile-menu {
     display: none; position: fixed; inset: 0;
-    background: rgba(5,5,16,0.97); z-index: 99;
+    background: var(--mob-bg); z-index: 99;
     flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
+    transition: background 0.4s;
   }
   .mobile-menu.open { display: flex; }
   .mobile-menu a {
@@ -143,12 +224,8 @@
   .hero-name {
     font-size: clamp(2.8rem, 6.5vw, 5rem);
     font-weight: 900; line-height: 1.05;
-    background: linear-gradient(90deg, #ffffff 0%, var(--cyan) 25%, var(--purple) 55%, var(--pink) 80%, #ffffff 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    background-clip: text; background-size: 300%;
-    animation: nameShimmer 5s linear infinite;
+    letter-spacing: -1px;
   }
-  @keyframes nameShimmer { 0% { background-position: 0% } 100% { background-position: 300% } }
   .hero-subtitle {
     font-size: clamp(1rem, 2.2vw, 1.2rem);
     color: var(--muted); margin: 1.2rem 0 2.5rem; line-height: 1.75;
@@ -156,18 +233,18 @@
   .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
   .btn-primary {
     padding: 0.8rem 2.2rem; border-radius: 8px;
-    background: linear-gradient(135deg, var(--cyan), var(--purple));
-    color: #000; font-weight: 800; text-decoration: none;
+    background: #4285F4;
+    color: #fff; font-weight: 800; text-decoration: none;
     font-size: 0.88rem; letter-spacing: 0.06em;
     transition: transform 0.2s, box-shadow 0.2s;
   }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 35px rgba(0,245,255,0.35); }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 35px rgba(66,133,244,0.45); background: #3367d6; }
   .btn-ghost {
     padding: 0.8rem 2.2rem; border-radius: 8px;
     border: 1px solid var(--border); color: var(--text); text-decoration: none;
     font-size: 0.88rem; transition: border-color 0.25s, background 0.25s;
   }
-  .btn-ghost:hover { border-color: var(--cyan); background: rgba(0,245,255,0.05); }
+  .btn-ghost:hover { border-color: var(--cyan); background: rgba(66,133,244,0.05); }
 
   /* AVATAR */
   .hero-right {
@@ -176,11 +253,11 @@
   .avatar-scene { perspective: 700px; width: 230px; height: 230px; position: relative; }
   .avatar-card {
     width: 100%; height: 100%; border-radius: 50%;
-    background: linear-gradient(135deg, rgba(0,245,255,0.12), rgba(168,85,247,0.12));
-    border: 2px solid rgba(0,245,255,0.35);
+    background: linear-gradient(135deg, rgba(66,133,244,0.12), rgba(234,67,53,0.12));
+    border: 2px solid rgba(66,133,244,0.35);
     display: flex; align-items: center; justify-content: center;
     animation: card3d 7s ease-in-out infinite;
-    box-shadow: 0 0 50px rgba(0,245,255,0.18), 0 0 100px rgba(168,85,247,0.08);
+    box-shadow: 0 0 50px rgba(66,133,244,0.18), 0 0 100px rgba(234,67,53,0.08);
     transform-style: preserve-3d;
   }
   @keyframes card3d {
@@ -192,17 +269,17 @@
   }
   .avatar-initials {
     font-size: 3.8rem; font-weight: 900; letter-spacing: -2px;
-    background: linear-gradient(135deg, var(--cyan), var(--purple));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    color: #ffffff;
     animation: pulseGlow 2.5s ease-in-out infinite;
   }
+  body.light .avatar-initials { color: #2b2d42; }
   @keyframes pulseGlow {
-    0%,100% { filter: drop-shadow(0 0 10px rgba(0,245,255,0.9)); }
-    50%      { filter: drop-shadow(0 0 22px rgba(168,85,247,1)); }
+    0%,100% { filter: drop-shadow(0 0 10px rgba(66,133,244,0.9)); }
+    50%      { filter: drop-shadow(0 0 22px rgba(234,67,53,1)); }
   }
   .ripple-ring {
     position: absolute; top: 50%; left: 50%;
-    border-radius: 50%; border: 1.5px solid rgba(0,245,255,0.35);
+    border-radius: 50%; border: 1.5px solid rgba(66,133,244,0.35);
     animation: rippleOut 3.5s ease-out infinite;
     transform: translate(-50%,-50%);
     pointer-events: none;
@@ -261,13 +338,13 @@
     border-left: 3px solid var(--cyan); border-radius: 14px; padding: 1.75rem 2rem;
     transition: border-left-color 0.3s, background 0.3s;
   }
-  .exp-card:hover { border-left-color: var(--purple); background: rgba(255,255,255,0.055); }
+  .exp-card:hover { border-left-color: var(--purple); background: rgba(66,133,244,0.04); }
   .exp-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.4rem; }
   .exp-role { font-weight: 700; font-size: 1.05rem; }
   .exp-company { color: var(--cyan); font-size: 0.88rem; margin-bottom: 0.2rem; }
   .exp-date {
     font-size: 0.75rem; color: var(--muted);
-    background: rgba(0,245,255,0.07); border: 1px solid rgba(0,245,255,0.2);
+    background: rgba(66,133,244,0.07); border: 1px solid rgba(66,133,244,0.2);
     padding: 0.22rem 0.7rem; border-radius: 100px; white-space: nowrap;
   }
   .exp-loc { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.7rem; }
@@ -293,7 +370,7 @@
   .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .tech-tag {
     font-size: 0.7rem; padding: 0.18rem 0.6rem; border-radius: 100px;
-    background: rgba(0,245,255,0.07); border: 1px solid rgba(0,245,255,0.2);
+    background: rgba(66,133,244,0.07); border: 1px solid rgba(66,133,244,0.2);
     color: var(--cyan); letter-spacing: 0.04em; font-weight: 600;
   }
   .project-link {
@@ -313,10 +390,10 @@
   .skill-row { display: flex; justify-content: space-between; margin-bottom: 0.45rem; }
   .skill-name { font-size: 0.88rem; font-weight: 500; }
   .skill-pct { font-size: 0.78rem; color: var(--muted); }
-  .skill-bar-bg { height: 5px; border-radius: 100px; background: rgba(255,255,255,0.06); overflow: hidden; }
+  .skill-bar-bg { height: 5px; border-radius: 100px; background: var(--skill-track); overflow: hidden; }
   .skill-bar-fill {
     height: 100%; width: 0; border-radius: 100px;
-    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    background: #4285F4;
     transition: width 1.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -328,7 +405,7 @@
     display: flex; align-items: center; gap: 1rem;
     transition: border-color 0.3s;
   }
-  .cert-card:hover { border-color: rgba(168,85,247,0.5); }
+  .cert-card:hover { border-color: rgba(234,67,53,0.5); }
   .cert-icon {
     width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
@@ -344,7 +421,7 @@
   }
   .c-ripple {
     position: absolute; border-radius: 50%;
-    border: 1px solid rgba(0,245,255,0.08);
+    border: 1px solid rgba(66,133,244,0.08);
     animation: cRipple 5s ease-out infinite;
     transform: translate(-50%,-50%);
   }
@@ -365,7 +442,7 @@
   }
   .contact-link:hover {
     border-color: var(--cyan); color: var(--cyan);
-    background: rgba(0,245,255,0.05); transform: translateY(-2px);
+    background: rgba(66,133,244,0.05); transform: translateY(-2px);
   }
 
   /* FOOTER */
@@ -378,29 +455,29 @@
   /* RESUME DOWNLOAD BUTTONS */
   .btn-download {
     padding: 0.8rem 1.8rem; border-radius: 8px;
-    background: linear-gradient(135deg, var(--cyan), var(--purple));
-    color: #000; font-weight: 800; font-size: 0.88rem;
+    background: #4285F4;
+    color: #fff; font-weight: 800; font-size: 0.88rem;
     text-decoration: none; letter-spacing: 0.04em;
     transition: transform 0.2s, box-shadow 0.2s;
     display: inline-flex; align-items: center; gap: 0.4rem;
   }
   .btn-download:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(0,245,255,0.4);
+    box-shadow: 0 8px 28px rgba(66,133,244,0.4); background: #3367d6;
   }
   .btn-download-contact {
     display: inline-flex; align-items: center; gap: 0.5rem;
     margin-top: 2rem;
     padding: 0.9rem 2.5rem; border-radius: 100px;
-    background: linear-gradient(135deg, var(--cyan), var(--purple));
-    color: #000; font-weight: 800; font-size: 0.95rem;
+    background: #4285F4;
+    color: #fff; font-weight: 800; font-size: 0.95rem;
     text-decoration: none; letter-spacing: 0.05em;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 20px rgba(0,245,255,0.25);
+    box-shadow: 0 4px 20px rgba(66,133,244,0.25);
   }
   .btn-download-contact:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 35px rgba(0,245,255,0.45);
+    box-shadow: 0 10px 35px rgba(66,133,244,0.45); background: #3367d6;
   }
 
   /* RESPONSIVE */
@@ -453,6 +530,13 @@
   <button class="hamburger" id="ham" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
+  <div class="theme-toggle" id="themeToggle" title="Toggle light / dark mode">
+    <span class="toggle-icon">🌙</span>
+    <div class="toggle-track">
+      <div class="toggle-thumb"></div>
+    </div>
+    <span class="toggle-icon">☀️</span>
+  </div>
 </nav>
 
 <!-- MOBILE MENU -->
@@ -467,10 +551,14 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left reveal fade-up">
-    <h1 class="hero-name">Syed Khadir<br>Aneeq</h1>
+    <h1 class="hero-name">
+      <span style="color:#4285F4">S</span><span style="color:#EA4335">y</span><span style="color:#FBBC04">e</span><span style="color:#34A853">d</span>
+      <span style="color:#4285F4"> K</span><span style="color:#EA4335">h</span><span style="color:#FBBC04">a</span><span style="color:#34A853">d</span><span style="color:#4285F4">i</span><span style="color:#EA4335">r</span><br>
+      <span style="color:#FBBC04">A</span><span style="color:#34A853">n</span><span style="color:#4285F4">e</span><span style="color:#EA4335">e</span><span style="color:#FBBC04">q</span>
+    </h1>
     <p class="hero-subtitle">
-      Python Developer &amp; AI/ML Engineer crafting<br>
-      intelligent automation &amp; cloud-powered systems.
+      GCP Technical Solutions Engineer · AI/ML<br>
+      Building cloud-native solutions on Google Cloud Platform.
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Projects</a>
@@ -497,13 +585,13 @@
 <!-- ABOUT -->
 <section id="about" class="section-pad">
   <div class="section-label reveal fade-up">About Me</div>
-  <h2 class="section-title reveal fade-up">Turning ideas into <span>intelligent systems</span></h2>
+  <h2 class="section-title reveal fade-up">Building the cloud, <span>intelligently</span></h2>
   <div class="about-grid">
     <div class="reveal slide-left">
       <div class="about-text">
-        <p>Engineering professional experienced in <strong style="color:var(--text)">SAP</strong> and <strong style="color:var(--text)">ServiceNow</strong> operations, handling enterprise incident workflows along with SAP-based claims and warranty processes to ensure smooth business operations.</p>
-        <p>Passionate about building intelligent applications and expanding expertise in <strong style="color:var(--text)">Machine Learning</strong> and <strong style="color:var(--text)">Generative AI</strong> through hands-on projects. Developed an AI-driven cloud security configuration analyzer, an LLM-based test case generator with Selenium automation, and a face &amp; voice-based attendance verification system.</p>
-        <p>Strong interest in problem solving, data-driven applications, intelligent workflows, and modern AI technologies.</p>
+        <p>Google Cloud Technical Solutions Engineer at <strong style="color:var(--text)">Tata Consultancy Services (TCS)</strong> with a strong focus on cloud infrastructure, automation, and AI-powered solutions. I design, deploy, and manage applications on <strong style="color:var(--text)">Google Cloud Platform (GCP)</strong> while continuously expanding expertise in cloud-native technologies and infrastructure automation.</p>
+        <p>Passionate about building intelligent applications that integrate <strong style="color:var(--text)">Generative AI</strong> and cloud-native automation to solve real-world engineering challenges. Built an AI-driven cloud security configuration analyzer, an LLM-based test case generator with Selenium automation, and a face &amp; voice-based attendance verification system.</p>
+        <p>Strong interest in cloud computing, <strong style="color:var(--text)">Kubernetes</strong>, infrastructure automation, AI, and building scalable solutions on Google Cloud.</p>
         <p>B.E. in Electronics &amp; Communication Engineering from Prathyusha Engineering College with a stellar <strong style="color:var(--cyan)">CGPA of 8.96</strong>.</p>
       </div>
     </div>
@@ -539,16 +627,18 @@
     <div class="exp-card reveal slide-left">
       <div class="exp-top">
         <div>
-          <div class="exp-role">Assistant System Engineer</div>
+          <div class="exp-role">Google Cloud Technical Solutions Engineer</div>
           <div class="exp-company">Tata Consultancy Services (TCS)</div>
         </div>
         <div class="exp-date">Dec 2024 – Present</div>
       </div>
       <div class="exp-loc">📍 Hyderabad, India</div>
       <ul class="exp-bullets">
-        <li>Manage SAP-based claims and warranty operations ensuring data accuracy and process compliance.</li>
-        <li>Leverage ServiceNow for incident tracking and workflow management to improve resolution efficiency.</li>
-        <li>Coordinate with cross-functional teams and external vendors to resolve system and operational issues.</li>
+        <li>Design, deploy, and manage applications on Google Cloud Platform (GCP), focusing on cloud-native infrastructure and scalable solutions.</li>
+        <li>Work with Docker, Kubernetes, and Terraform for container orchestration and infrastructure-as-code automation.</li>
+        <li>Leverage Vertex AI and Generative AI capabilities to build intelligent, cloud-integrated applications.</li>
+        <li>Apply cloud security and identity management best practices to ensure secure, compliant GCP environments.</li>
+        <li>Collaborate with cross-functional teams to troubleshoot and resolve complex cloud infrastructure challenges.</li>
       </ul>
     </div>
 
@@ -659,27 +749,31 @@
   <div class="skills-grid">
 
     <div class="reveal slide-left">
-      <div class="skill-group-title">Programming &amp; Backend</div>
+      <div class="skill-group-title">Google Cloud Platform</div>
       <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct">95%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="95"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">FastAPI / REST APIs</span><span class="skill-pct">85%</span></div>
+        <div class="skill-row"><span class="skill-name">GCP Core Services</span><span class="skill-pct">85%</span></div>
         <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="85"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Pandas / PyTorch</span><span class="skill-pct">80%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="80"></div></div>
+        <div class="skill-row"><span class="skill-name">Docker &amp; Kubernetes</span><span class="skill-pct">82%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="82"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">SQL / Java / C</span><span class="skill-pct">75%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="75"></div></div>
+        <div class="skill-row"><span class="skill-name">Terraform (IaC)</span><span class="skill-pct">78%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="78"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Cloud Security &amp; IAM</span><span class="skill-pct">80%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="80"></div></div>
       </div>
     </div>
 
     <div class="reveal slide-right">
-      <div class="skill-group-title">AI / ML &amp; Agents</div>
+      <div class="skill-group-title">AI / ML &amp; Generative AI</div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Vertex AI &amp; Generative AI</span><span class="skill-pct">83%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="83"></div></div>
+      </div>
       <div class="skill-item">
         <div class="skill-row"><span class="skill-name">LLMs &amp; AI Agents</span><span class="skill-pct">88%</span></div>
         <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="88"></div></div>
@@ -692,32 +786,32 @@
         <div class="skill-row"><span class="skill-name">Computer Vision / OpenCV</span><span class="skill-pct">78%</span></div>
         <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="78"></div></div>
       </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">AWS / Cloud Security</span><span class="skill-pct">82%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="82"></div></div>
-      </div>
     </div>
 
     <div class="reveal slide-left">
-      <div class="skill-group-title">Automation &amp; Testing</div>
+      <div class="skill-group-title">Programming &amp; Automation</div>
       <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Selenium</span><span class="skill-pct">85%</span></div>
+        <div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct">95%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="95"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Linux</span><span class="skill-pct">85%</span></div>
         <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="85"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Automation Anywhere</span><span class="skill-pct">83%</span></div>
+        <div class="skill-row"><span class="skill-name">Selenium / Automation Anywhere</span><span class="skill-pct">83%</span></div>
         <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="83"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Cucumber / Nightwatch</span><span class="skill-pct">70%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="70"></div></div>
+        <div class="skill-row"><span class="skill-name">FastAPI / REST APIs</span><span class="skill-pct">85%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="85"></div></div>
       </div>
     </div>
 
     <div class="reveal slide-right">
       <div class="skill-group-title">Tools &amp; Platforms</div>
       <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Git / GitHub / Linux</span><span class="skill-pct">90%</span></div>
+        <div class="skill-row"><span class="skill-name">Git / GitHub</span><span class="skill-pct">90%</span></div>
         <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="90"></div></div>
       </div>
       <div class="skill-item">
@@ -725,8 +819,12 @@
         <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="83"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">SAP / ServiceNow</span><span class="skill-pct">78%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="78"></div></div>
+        <div class="skill-row"><span class="skill-name">SAP / ServiceNow</span><span class="skill-pct">75%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="75"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Pandas / PyTorch</span><span class="skill-pct">80%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="80"></div></div>
       </div>
     </div>
 
@@ -794,7 +892,7 @@
     <div class="section-label">Let's Connect</div>
     <h2 class="section-title">Ready to build <span>something great?</span></h2>
     <p style="color:var(--muted);max-width:480px;margin:0 auto;line-height:1.85;font-size:1rem;">
-      Open to Python Developer, AI/ML Engineer, and Automation roles. Let's build something meaningful together.
+      Open to Cloud Engineering, GCP Solutions, and AI/ML roles. Let's build something meaningful together on Google Cloud.
     </p>
     <div class="contact-links">
       <a href="mailto:aneeqsyed12@gmail.com" class="contact-link">📧 aneeqsyed12@gmail.com</a>
@@ -807,7 +905,7 @@
 </section>
 
 <footer>
-  <p>Designed &amp; built by <strong style="color:var(--cyan)">Syed Khadir Aneeq</strong> &nbsp;·&nbsp; Python Developer &amp; AI/ML Engineer &nbsp;·&nbsp; Hyderabad</p>
+  <p>Designed &amp; built by <strong style="color:var(--cyan)">Syed Khadir Aneeq</strong> &nbsp;·&nbsp; GCP Technical Solutions Engineer &amp; AI/ML &nbsp;·&nbsp; Hyderabad</p>
 </footer>
 
 <script>
@@ -839,12 +937,12 @@ document.querySelectorAll('a, button').forEach(el => {
   el.addEventListener('mouseenter', () => {
     cur.style.transform = 'translate(-50%,-50%) scale(2)';
     ring.style.width = '52px'; ring.style.height = '52px';
-    ring.style.borderColor = 'rgba(168,85,247,0.6)';
+    ring.style.borderColor = 'rgba(234,67,53,0.6)';
   });
   el.addEventListener('mouseleave', () => {
     cur.style.transform = 'translate(-50%,-50%) scale(1)';
     ring.style.width = '36px'; ring.style.height = '36px';
-    ring.style.borderColor = 'rgba(0,245,255,0.45)';
+    ring.style.borderColor = 'rgba(66,133,244,0.45)';
   });
 });
 
@@ -882,7 +980,7 @@ function drawParticles() {
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(0,245,255,0.55)';
+    ctx.fillStyle = 'rgba(66,133,244,0.55)';
     ctx.fill();
 
     for (let j = i + 1; j < pts.length; j++) {
@@ -893,7 +991,7 @@ function drawParticles() {
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(q.x, q.y);
-        ctx.strokeStyle = `rgba(0,245,255,${0.13 * (1 - d / 130)})`;
+        ctx.strokeStyle = `rgba(66,133,244,${0.13 * (1 - d / 130)})`;
         ctx.lineWidth = 0.5;
         ctx.stroke();
       }
@@ -905,15 +1003,26 @@ drawParticles();
 
 // MARQUEE
 const items = [
-  'Tata Consultancy Services','ISRO SDSC-SHAR','Python','FastAPI','LLMs & AI Agents',
-  'AWS Cloud','Selenium','Automation Anywhere','Streamlit','OpenCV','ServiceNow',
-  'SAP','RAG Pipelines','Prompt Engineering','Llama3','PLC & SCADA'
+  'Tata Consultancy Services','ISRO SDSC-SHAR','Google Cloud Platform','Docker & Kubernetes',
+  'Terraform','Vertex AI','Generative AI','Python','Linux','Cloud Security',
+  'LLMs & AI Agents','RAG Pipelines','Selenium','Automation Anywhere','Streamlit','FastAPI'
 ];
 const track = document.getElementById('marquee');
 const doubled = [...items, ...items];
 track.innerHTML = doubled.map(t =>
   `<div class="marquee-item"><div class="marquee-dot"></div>${t}</div>`
 ).join('');
+
+// THEME TOGGLE
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme') || 'dark';
+if (savedTheme === 'light') document.body.classList.add('light');
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
 
 // HAMBURGER
 document.getElementById('ham').addEventListener('click', () => {
