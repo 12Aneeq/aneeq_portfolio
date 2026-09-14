@@ -203,8 +203,36 @@
   }
   .btn-ghost:hover { border-color: var(--cyan); background: rgba(66,133,244,0.05); }
 
-  /* AVATAR */
-  .hero-right { flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .hero-divider {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(66,133,244,0.6), rgba(66,133,244,0.3), transparent);
+    height: 220px;
+    margin: 0 3rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(66,133,244,0.35);
+  }
+  .terminal-card {
+    background: #080e1a;
+    border: 1px solid rgba(66,133,244,0.3);
+    border-radius: 14px;
+    padding: 20px 24px;
+    min-width: 270px;
+    max-width: 310px;
+    font-family: 'Courier New', Courier, monospace;
+    flex-shrink: 0;
+    box-shadow: 0 0 30px rgba(66,133,244,0.08);
+  }
+  .terminal-dots { display: flex; gap: 6px; margin-bottom: 14px; align-items: center; }
+  .terminal-dots span { width: 11px; height: 11px; border-radius: 50%; }
+  .terminal-label { color: #4a5568; font-size: 11px; margin-left: 8px; font-family: monospace; }
+  .terminal-line { font-size: 12px; line-height: 2; }
+  .terminal-line .prompt { color: #4285F4; }
+  .terminal-line .cmd { color: #34A853; }
+  .terminal-line .val { padding-left: 14px; display: block; }
+  body.light .terminal-card { background: #f0f4ff; border-color: rgba(66,133,244,0.25); }
+  body.light .terminal-line .val { color: #1a1a2e; }
+  body.light .terminal-label { color: #94a3b8; }
+  @media (max-width: 780px) { .hero-divider { display: none; } .terminal-card { min-width: unset; width: 100%; max-width: 100%; } }
   .avatar-scene { perspective: 700px; width: 230px; height: 230px; position: relative; }
   .avatar-card {
     width: 100%; height: 100%; border-radius: 50%;
@@ -482,14 +510,36 @@
       <a href="#contact"  class="btn-ghost">Get In Touch</a>
     </div>
   </div>
-  <div class="hero-right reveal slide-right">
-    <div class="avatar-scene">
-      <div class="ripple-ring"></div>
-      <div class="ripple-ring"></div>
-      <div class="ripple-ring"></div>
-      <div class="avatar-card">
-        <div class="avatar-initials">SKA</div>
-      </div>
+  <!-- DIVIDER -->
+  <div class="hero-divider"></div>
+
+  <!-- TERMINAL CARD -->
+  <div class="terminal-card reveal slide-right">
+    <div class="terminal-dots">
+      <span style="background:#EA4335;"></span>
+      <span style="background:#FBBC04;"></span>
+      <span style="background:#34A853;"></span>
+      <span class="terminal-label">aneeq@gcp ~ </span>
+    </div>
+    <div class="terminal-line">
+      <span><span class="prompt">❯</span> <span class="cmd">whoami</span></span>
+      <span class="val" style="color:#e2e8f0;">Syed Khadir Aneeq</span>
+    </div>
+    <div class="terminal-line">
+      <span><span class="prompt">❯</span> <span class="cmd">role</span></span>
+      <span class="val" style="color:#4285F4;">Technical Solution Representative</span>
+    </div>
+    <div class="terminal-line">
+      <span><span class="prompt">❯</span> <span class="cmd">company</span></span>
+      <span class="val" style="color:#e2e8f0;">Tata Consultancy Services · Chennai</span>
+    </div>
+    <div class="terminal-line">
+      <span><span class="prompt">❯</span> <span class="cmd">stack</span></span>
+      <span class="val" style="color:#FBBC04;">Gemini · Vertex AI · Python</span>
+    </div>
+    <div class="terminal-line">
+      <span><span class="prompt">❯</span> <span class="cmd">status</span></span>
+      <span class="val"><span style="color:#34A853;">●</span> <span style="color:#e2e8f0;">Open to opportunities</span></span>
     </div>
   </div>
 </section>
