@@ -1,6 +1,3 @@
-
-
-Portfolio · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +22,7 @@ Portfolio · HTML
     --skill-track: rgba(255,255,255,0.06);
     --strong-text: #e2e8f0;
   }
- 
+
   /* ── LIGHT MODE ── */
   body.light {
     --bg: #ffffff;
@@ -67,7 +64,7 @@ Portfolio · HTML
   body.light .btn-ghost:hover { border-color: var(--cyan); background: rgba(66,133,244,0.06); color: var(--cyan); }
   body.light footer { border-top-color: rgba(0,0,0,0.08); }
   body.light .c-ripple { border-color: rgba(66,133,244,0.12); }
- 
+
   /* TOGGLE SWITCH */
   .theme-toggle {
     display: flex; align-items: center; gap: 0.5rem;
@@ -92,7 +89,7 @@ Portfolio · HTML
   }
   body.light .toggle-thumb { transform: translateX(20px); }
   .toggle-icon { font-size: 0.82rem; }
- 
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
@@ -101,7 +98,7 @@ Portfolio · HTML
     overflow-x: hidden; cursor: none;
     transition: background 0.4s ease, color 0.4s ease;
   }
- 
+
   /* LOADER */
   #loader {
     position: fixed; inset: 0; background: var(--bg);
@@ -125,7 +122,7 @@ Portfolio · HTML
   }
   @keyframes loadfill { from { width: 0; } to { width: 100%; } }
   @keyframes shimmer { 0% { background-position: 0% } 100% { background-position: 300% } }
- 
+
   /* CURSOR */
   #cursor {
     width: 10px; height: 10px; background: var(--cyan); border-radius: 50%;
@@ -140,10 +137,10 @@ Portfolio · HTML
     transform: translate(-50%,-50%);
     transition: width 0.3s, height 0.3s, border-color 0.3s;
   }
- 
+
   /* CANVAS */
   #particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
- 
+
   /* NAV */
   nav {
     position: fixed; top: 0; width: 100%; z-index: 100;
@@ -177,7 +174,7 @@ Portfolio · HTML
     background: linear-gradient(90deg, var(--cyan), var(--purple));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
- 
+
   /* SECTIONS */
   section { position: relative; z-index: 1; }
   .section-pad { padding: 6rem 6vw; }
@@ -187,7 +184,7 @@ Portfolio · HTML
     background: linear-gradient(90deg, var(--cyan), var(--purple));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
- 
+
   /* HERO */
   #hero { min-height: 100vh; display: flex; align-items: center; padding: 7rem 6vw 4rem; gap: 5rem; }
   .hero-left { flex: 1; }
@@ -205,7 +202,7 @@ Portfolio · HTML
     color: var(--text); text-decoration: none; font-size: 0.88rem; transition: border-color 0.25s, background 0.25s;
   }
   .btn-ghost:hover { border-color: var(--cyan); background: rgba(66,133,244,0.05); }
- 
+
   /* AVATAR */
   .hero-right { flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
   .avatar-scene { perspective: 700px; width: 230px; height: 230px; position: relative; }
@@ -247,7 +244,7 @@ Portfolio · HTML
     0%   { opacity: 0.65; transform: translate(-50%,-50%) scale(0.8); }
     100% { opacity: 0;    transform: translate(-50%,-50%) scale(1.05); }
   }
- 
+
   /* MARQUEE */
   .marquee-section {
     padding: 1.75rem 0; overflow: hidden;
@@ -263,14 +260,14 @@ Portfolio · HTML
     letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; font-weight: 600;
   }
   .marquee-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--cyan); flex-shrink: 0; }
- 
+
   /* REVEAL */
   .reveal { opacity: 0; transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.fade-up   { transform: translateY(44px); }
   .reveal.slide-left  { transform: translateX(-55px); }
   .reveal.slide-right { transform: translateX(55px); }
   .reveal.visible { opacity: 1; transform: none; }
- 
+
   /* ABOUT */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
   .about-text { color: var(--muted); line-height: 1.9; font-size: 1rem; }
@@ -283,7 +280,7 @@ Portfolio · HTML
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
   .stat-label { color: var(--muted); font-size: 0.8rem; margin-top: 0.3rem; }
- 
+
   /* EXPERIENCE */
   .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
   .exp-card {
@@ -304,7 +301,7 @@ Portfolio · HTML
   .exp-bullets { list-style: none; color: var(--muted); font-size: 0.88rem; line-height: 1.85; }
   .exp-bullets li { display: flex; gap: 0.55rem; align-items: flex-start; margin-bottom: 0.2rem; }
   .exp-bullets li::before { content: "→"; color: var(--cyan); flex-shrink: 0; margin-top: 2px; }
- 
+
   /* AI TOOLS PILLS */
   .ai-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1rem; }
   .ai-pill {
@@ -316,7 +313,7 @@ Portfolio · HTML
   .pill-yellow{ background: rgba(251,188,4,0.12);   border: 1px solid rgba(251,188,4,0.35);  color: #c49a00; }
   body.light .pill-yellow { color: #9a7400; }
   .pill-green { background: rgba(52,168,83,0.1);    border: 1px solid rgba(52,168,83,0.3);   color: #34A853; }
- 
+
   /* PROJECTS */
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
   .project-card {
@@ -343,7 +340,7 @@ Portfolio · HTML
     margin-top: 1rem; font-weight: 700; transition: color 0.2s;
   }
   .project-link:hover { color: var(--cyan); }
- 
+
   /* SKILLS */
   .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .skill-group-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 1.25rem; font-weight: 700; }
@@ -353,7 +350,7 @@ Portfolio · HTML
   .skill-pct { font-size: 0.78rem; color: var(--muted); }
   .skill-bar-bg { height: 5px; border-radius: 100px; background: var(--skill-track); overflow: hidden; }
   .skill-bar-fill { height: 100%; width: 0; border-radius: 100px; background: #4285F4; transition: width 1.3s cubic-bezier(0.4, 0, 0.2, 1); }
- 
+
   /* CERTS */
   .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
   .cert-card {
@@ -365,7 +362,7 @@ Portfolio · HTML
   .cert-icon { width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
   .cert-text { font-size: 0.83rem; font-weight: 600; line-height: 1.45; }
   .cert-issuer { font-size: 0.72rem; color: var(--muted); margin-top: 0.2rem; }
- 
+
   /* CONTACT */
   #contact { overflow: hidden; }
   .contact-ripple-wrap { position: absolute; top: 50%; left: 50%; pointer-events: none; z-index: 0; }
@@ -390,10 +387,10 @@ Portfolio · HTML
     font-size: 0.88rem; font-weight: 500; transition: all 0.3s;
   }
   .contact-link:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(66,133,244,0.05); transform: translateY(-2px); }
- 
+
   /* FOOTER */
   footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
- 
+
   /* RESUME DOWNLOAD */
   .btn-download-contact {
     display: inline-flex; align-items: center; gap: 0.5rem;
@@ -404,7 +401,7 @@ Portfolio · HTML
     box-shadow: 0 4px 20px rgba(66,133,244,0.25);
   }
   .btn-download-contact:hover { transform: translateY(-3px); box-shadow: 0 10px 35px rgba(66,133,244,0.45); background: #3367d6; }
- 
+
   /* RESPONSIVE */
   @media (max-width: 780px) {
     #hero { flex-direction: column; text-align: center; padding-top: 5.5rem; gap: 3rem; }
@@ -424,21 +421,21 @@ Portfolio · HTML
 </style>
 </head>
 <body>
- 
+
 <!-- LOADER -->
 <div id="loader">
   <div class="loader-text">ANEEQ</div>
   <div class="loader-sub">Loading portfolio...</div>
   <div class="loader-bar-bg"><div class="loader-bar-fill"></div></div>
 </div>
- 
+
 <!-- CURSOR -->
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
- 
+
 <!-- PARTICLES -->
 <canvas id="particles"></canvas>
- 
+
 <!-- NAV -->
 <nav>
   <div class="nav-logo">SKA</div>
@@ -458,7 +455,7 @@ Portfolio · HTML
     <span class="toggle-icon">☀️</span>
   </div>
 </nav>
- 
+
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about"      onclick="closeMobile()">About</a>
@@ -467,7 +464,7 @@ Portfolio · HTML
   <a href="#skills"     onclick="closeMobile()">Skills</a>
   <a href="#contact"    onclick="closeMobile()">Contact</a>
 </div>
- 
+
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left reveal fade-up">
@@ -496,12 +493,12 @@ Portfolio · HTML
     </div>
   </div>
 </section>
- 
+
 <!-- MARQUEE -->
 <div class="marquee-section">
   <div class="marquee-track" id="marquee"></div>
 </div>
- 
+
 <!-- ABOUT -->
 <section id="about" class="section-pad">
   <div class="section-label reveal fade-up">About Me</div>
@@ -530,20 +527,20 @@ Portfolio · HTML
           <div class="stat-label">Industry Orgs</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">6</div>
+          <div class="stat-num">7</div>
           <div class="stat-label">Certifications</div>
         </div>
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- EXPERIENCE -->
 <section id="experience" class="section-pad" style="background:rgba(255,255,255,0.012);">
   <div class="section-label reveal fade-up">Career</div>
   <h2 class="section-title reveal fade-up">Where I've <span>worked</span></h2>
   <div class="exp-list">
- 
+
     <div class="exp-card reveal slide-left">
       <div class="exp-top">
         <div>
@@ -571,7 +568,7 @@ Portfolio · HTML
         <span class="ai-pill pill-red">Python</span>
       </div>
     </div>
- 
+
     <div class="exp-card reveal slide-right">
       <div class="exp-top">
         <div>
@@ -587,16 +584,16 @@ Portfolio · HTML
         <li>Simulated fail-safe interlocks to handle sensor failure scenarios and improve system reliability.</li>
       </ul>
     </div>
- 
+
   </div>
 </section>
- 
+
 <!-- PROJECTS -->
 <section id="projects" class="section-pad">
   <div class="section-label reveal fade-up">Portfolio</div>
   <h2 class="section-title reveal fade-up">Featured <span>Projects</span></h2>
   <div class="projects-grid">
- 
+
     <div class="project-card reveal fade-up">
       <div class="project-body">
         <div class="project-title">🛡️ AI Agent – Cloud Security Audit</div>
@@ -608,7 +605,7 @@ Portfolio · HTML
         <a href="https://github.com/12Aneeq/AI-Agent-for-Cloud-Security-Configuration-Audit-and-Recommendations" target="_blank" class="project-link">View on GitHub →</a>
       </div>
     </div>
- 
+
     <div class="project-card reveal fade-up" style="transition-delay:0.1s">
       <div class="project-body">
         <div class="project-title">📸 SnapVoice – AI Attendance App</div>
@@ -620,7 +617,7 @@ Portfolio · HTML
         <a href="https://github.com/12Aneeq/SnapVoice-AI-Attendance-Application" target="_blank" class="project-link">View on GitHub →</a>
       </div>
     </div>
- 
+
     <div class="project-card reveal fade-up" style="transition-delay:0.2s">
       <div class="project-body">
         <div class="project-title">🧪 Prompt2Test – AI Test Case Generator</div>
@@ -632,7 +629,7 @@ Portfolio · HTML
         <a href="https://github.com/12Aneeq/Prompt2Test---AI-TestCase-Generator" target="_blank" class="project-link">View on GitHub →</a>
       </div>
     </div>
- 
+
     <div class="project-card reveal fade-up" style="transition-delay:0.3s">
       <div class="project-body">
         <div class="project-title">🤖 CRM Automation Bot</div>
@@ -644,7 +641,7 @@ Portfolio · HTML
         <a href="https://github.com/12Aneeq/Automation-Bot-for-CRM-Application-using-Automation-Anywhere-Bot-Launcher" target="_blank" class="project-link">View on GitHub →</a>
       </div>
     </div>
- 
+
     <div class="project-card reveal fade-up" style="transition-delay:0.4s">
       <div class="project-body">
         <div class="project-title">⚙️ PLC Pump Control – ISRO</div>
@@ -656,16 +653,16 @@ Portfolio · HTML
         <a href="https://github.com/12Aneeq/PLC-based-Pump-operation-Control-System-for-Linear-Accelerator-system" target="_blank" class="project-link">View on GitHub →</a>
       </div>
     </div>
- 
+
   </div>
 </section>
- 
+
 <!-- SKILLS -->
 <section id="skills" class="section-pad" style="background:rgba(255,255,255,0.012);">
   <div class="section-label reveal fade-up">Expertise</div>
   <h2 class="section-title reveal fade-up">Technical <span>Skills</span></h2>
   <div class="skills-grid">
- 
+
     <div class="reveal slide-left">
       <div class="skill-group-title">Google Cloud Platform</div>
       <div class="skill-item">
@@ -685,7 +682,7 @@ Portfolio · HTML
         <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="80"></div></div>
       </div>
     </div>
- 
+
     <div class="reveal slide-right">
       <div class="skill-group-title">AI / ML &amp; Generative AI</div>
       <div class="skill-item">
@@ -705,7 +702,7 @@ Portfolio · HTML
         <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="85"></div></div>
       </div>
     </div>
- 
+
     <div class="reveal slide-left">
       <div class="skill-group-title">Programming &amp; Automation</div>
       <div class="skill-item">
@@ -725,7 +722,7 @@ Portfolio · HTML
         <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="85"></div></div>
       </div>
     </div>
- 
+
     <div class="reveal slide-right">
       <div class="skill-group-title">Tools &amp; Platforms</div>
       <div class="skill-item">
@@ -745,51 +742,58 @@ Portfolio · HTML
         <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="80"></div></div>
       </div>
     </div>
- 
+
   </div>
 </section>
- 
+
 <!-- CERTS -->
 <section class="section-pad">
   <div class="section-label reveal fade-up">Credentials</div>
   <h2 class="section-title reveal fade-up"><span>Certifications</span></h2>
   <div class="certs-grid">
     <div class="cert-card reveal fade-up">
+      <div class="cert-icon" style="background:rgba(66,133,244,0.12);">🏅</div>
+      <div>
+        <div class="cert-text">Associate Cloud Engineer</div>
+        <div class="cert-issuer">Google Cloud</div>
+      </div>
+    </div>
+    <div class="cert-card reveal fade-up" style="transition-delay:0.1s">
       <div class="cert-icon" style="background:rgba(255,153,0,0.12);">☁️</div>
       <div>
         <div class="cert-text">AWS Certified Developer – Associate</div>
         <div class="cert-issuer">Amazon Web Services</div>
       </div>
     </div>
-    <div class="cert-card reveal fade-up" style="transition-delay:0.1s">
+    <div class="cert-card reveal fade-up" style="transition-delay:0.2s">
       <div class="cert-icon" style="background:rgba(0,245,255,0.1);">🤖</div>
       <div>
         <div class="cert-text">Automation Anywhere Certified Essentials RPA Professional</div>
         <div class="cert-issuer">Automation Anywhere · Automation 360</div>
       </div>
     </div>
-    <div class="cert-card reveal fade-up" style="transition-delay:0.2s">
+    <div class="cert-card reveal fade-up" style="transition-delay:0.3s">
       <div class="cert-icon" style="background:rgba(66,133,244,0.12);">🧠</div>
       <div>
         <div class="cert-text">Generative AI with Vertex AI: Prompt Design</div>
         <div class="cert-issuer">Google Cloud</div>
       </div>
     </div>
-    <div class="cert-card reveal fade-up" style="transition-delay:0.3s">
+    <div class="cert-card reveal fade-up" style="transition-delay:0.4s">
       <div class="cert-icon" style="background:rgba(0,188,212,0.12);">🌐</div>
       <div>
         <div class="cert-text">Introduction to Networks</div>
         <div class="cert-issuer">CISCO</div>
       </div>
     </div>
-    <div class="cert-card reveal fade-up" style="transition-delay:0.4s">
+    <div class="cert-card reveal fade-up" style="transition-delay:0.5s">
       <div class="cert-icon" style="background:rgba(168,85,247,0.12);">💡</div>
       <div>
         <div class="cert-text">Design Thinking Elite</div>
         <div class="cert-issuer">NPTEL</div>
       </div>
     </div>
-    <div class="cert-card reveal fade-up" style="transition-delay:0.5s">
+    <div class="cert-card reveal fade-up" style="transition-delay:0.6s">
       <div class="cert-icon" style="background:rgba(236,72,153,0.12);">📘</div>
       <div>
         <div class="cert-text">The Ultimate SAP S/4 HANA Certification</div>
@@ -798,7 +802,7 @@ Portfolio · HTML
     </div>
   </div>
 </section>
- 
+
 <!-- CONTACT -->
 <section id="contact" class="section-pad" style="background:rgba(255,255,255,0.012);">
   <div class="contact-ripple-wrap">
@@ -821,17 +825,17 @@ Portfolio · HTML
     <a href="Syed_Khadir_Aneeq_Resume.pdf" download="Syed_Khadir_Aneeq_Resume.pdf" class="btn-download-contact">⬇ Download Resume</a>
   </div>
 </section>
- 
+
 <footer>
   <p>Designed &amp; built by <strong style="color:var(--cyan)">Syed Khadir Aneeq</strong> &nbsp;·&nbsp; Technical Solution Representative — AI/ML (GCP) &nbsp;·&nbsp; Chennai</p>
 </footer>
- 
+
 <script>
 // LOADER
 window.addEventListener('load', () => {
   setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 2000);
 });
- 
+
 // CURSOR
 const cur = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
@@ -857,7 +861,7 @@ document.querySelectorAll('a, button').forEach(el => {
     ring.style.borderColor = 'rgba(66,133,244,0.45)';
   });
 });
- 
+
 // PARTICLES
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
@@ -891,7 +895,7 @@ function drawParticles() {
   requestAnimationFrame(drawParticles);
 }
 drawParticles();
- 
+
 // MARQUEE
 const items = [
   'Tata Consultancy Services','ISRO SDSC-SHAR','Google Cloud Platform',
@@ -902,7 +906,7 @@ const items = [
 const track = document.getElementById('marquee');
 const doubled = [...items, ...items];
 track.innerHTML = doubled.map(t => `<div class="marquee-item"><div class="marquee-dot"></div>${t}</div>`).join('');
- 
+
 // THEME TOGGLE
 const themeToggle = document.getElementById('themeToggle');
 if (localStorage.getItem('theme') === 'light') document.body.classList.add('light');
@@ -910,19 +914,19 @@ themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('light');
   localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
 });
- 
+
 // HAMBURGER
 document.getElementById('ham').addEventListener('click', () => {
   document.getElementById('mobileMenu').classList.toggle('open');
 });
 function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
- 
+
 // SCROLL REVEAL
 const revObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
- 
+
 // SKILL BARS
 const barObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -937,7 +941,3 @@ document.querySelectorAll('.skill-bar-fill').forEach(b => barObs.observe(b));
 </script>
 </body>
 </html>
- 
-
-
-
